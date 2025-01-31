@@ -15,36 +15,32 @@ export const userRoutes = [
   {
     path: "/",
     page: HomePage,
-    isPublic: true,
   },
   {
     path: "/home",
     page: HomePage,
-    isPublic: true,
   },
   {
     path: "/about",
     page: AboutPage,
-    isPublic: true,
   },
   {
     path: "/contact",
     page: ContactPage,
-    isPublic: true,
   },
 
   /* User's Private Routes*/
   {
     path: "/profile",
     page: ProfilePage,
-    isPublic: false,
-    allowedRoles: ["USER"],
+    isPrivate: true,
+    allowedRoles: ["USER", "ADMIN"],
   },
   {
     path: "/order",
     page: OrderPage,
-    isPublic: false,
-    allowedRoles: ["USER"],
+    isPrivate: true,
+    allowedRoles: ["USER", "ADMIN"],
   },
 ];
 
@@ -52,23 +48,23 @@ const UserRoutes = (
   <>
     <Route exact path="/" element={<UserLayout />}>
       {userRoutes.map((userRoute) => {
-        const { path, isPublic, allowedRoles, page: Page } = userRoute;
+        const { path, isPrivate, allowedRoles, page: Page } = userRoute;
 
-        if (isPublic) {
-          return <Route key={path} path={path} Component={Page} />;
+        if (isPrivate) {
+          return (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <PrivateRoutes allowedRoles={allowedRoles}>
+                  <Page />
+                </PrivateRoutes>
+              }
+            />
+          );
         }
 
-        return (
-          <Route
-            key={path}
-            path={path}
-            element={
-              <PrivateRoutes allowedRoles={allowedRoles}>
-                <Page />
-              </PrivateRoutes>
-            }
-          />
-        );
+        return <Route key={path} path={path} Component={Page} />;
       })}
     </Route>
   </>
