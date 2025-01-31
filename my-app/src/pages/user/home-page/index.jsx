@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../../components/user/header";
+import UserLayout from "../UserLayout";
 
 export default function HomePage() {
   return (

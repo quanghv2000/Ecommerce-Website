@@ -1,11 +1,22 @@
-import { RouterProvider } from "react-router-dom";
-import router from "./routes";
+import { BrowserRouter, Routes } from "react-router-dom";
+import PublicRoutes from "./routes/PublicRoutes";
+import UserRoutes from "./routes/UserRoutes";
+import AdminRoutes from "./routes/AdminRoutes";
 
 function App() {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* Public Routes */}
+        {PublicRoutes}
+
+        {/* User's Route */}
+        {UserRoutes}
+
+        {/* Admin's Route */}
+        {AdminRoutes}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

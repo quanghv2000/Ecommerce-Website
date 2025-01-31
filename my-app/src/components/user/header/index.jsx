@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function UserHeader() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -25,6 +25,26 @@ export default function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/profile">
+                  Profile
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/order">
+                  Order
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/admin-dashboard">
+                  Dashboard
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/404">
+                  404
                 </Link>
               </li>
             </ul>
