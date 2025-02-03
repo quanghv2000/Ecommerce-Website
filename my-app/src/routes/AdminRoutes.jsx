@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
 
-import AdminLayout from "../pages/admin/AdminLayout";
+import AdminLayout from "../layouts/AdminLayout";
 import DashboardPage from "../pages/admin/dashboard-page";
 
 import PrivateRoutes from "./PrivateRoutes";

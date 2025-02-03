@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../../components/user/header";
-import UserLayout from "../UserLayout";
+import UserLayout from "../../../layouts/UserLayout";
 
 export default function HomePage() {
   return (
