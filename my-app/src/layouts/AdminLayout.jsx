@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
-import AdminHeader from "../components/admin/header";
-import AdminSidebar from "../components/admin/sidebar";
+
+import AdminHeader from "./layout-components/admin/header";
+import AdminSidebar from "./layout-components/admin/sidebar";
+import Breadcrumbs from "./layout-components/admin/breadcrumbs";
 
 export default function AdminLayout() {
   return (
@@ -9,6 +11,7 @@ export default function AdminLayout() {
       <AdminHeader />
       <AdminSidebar />
       <main id="main" className="main">
+        <Breadcrumbs />
         <Outlet />
       </main>
     </div>

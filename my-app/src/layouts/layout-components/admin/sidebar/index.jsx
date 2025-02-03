@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AdminSidebar() {
   return (
@@ -6,11 +7,16 @@ export default function AdminSidebar() {
       <aside id="sidebar" className="sidebar">
         <ul className="sidebar-nav" id="sidebar-nav">
           <li className="nav-item">
-            <a className="nav-link " href="index.html">
+            <Link className="nav-link collapsed" to="/admin-dashboard">
               <i className="bi bi-grid" /> <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/admin-account-management">
+              <i className="bi bi-people" /> <span>Account Management</span>
+            </Link>
+          </li>
+          {/* <li className="nav-item">
             <a
               className="nav-link collapsed"
               data-bs-target="#components-nav"
@@ -291,7 +297,7 @@ export default function AdminSidebar() {
             <a className="nav-link collapsed" href="pages-blank.html">
               <i className="bi bi-file-earmark" /> <span>Blank</span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </aside>
     </div>

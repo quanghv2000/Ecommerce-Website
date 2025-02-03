@@ -1,14 +1,21 @@
 import { Route } from "react-router-dom";
 
-import AdminLayout from "../layouts/AdminLayout";
-import DashboardPage from "../pages/admin/dashboard-page";
-
 import PrivateRoutes from "./PrivateRoutes";
+
+import AdminLayout from "../layouts/AdminLayout";
+
+import DashboardPage from "../pages/admin/dashboard-page";
+import AccountManagementPage from "../pages/admin/account-management-page";
 
 export const adminRoutes = [
   {
     path: "/admin-dashboard",
     page: DashboardPage,
+    allowedRoles: ["ADMIN"],
+  },
+  {
+    path: "/admin-account-management",
+    page: AccountManagementPage,
     allowedRoles: ["ADMIN"],
   },
 ];

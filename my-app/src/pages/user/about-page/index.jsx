@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../../components/user/header";
+import Header from "../../../layouts/layout-components/user/header";
 
 export default function AboutPage() {
   return (
